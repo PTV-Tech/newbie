@@ -51,4 +51,10 @@ $(document).ready(function() {
     $(this).parent().parent().find('.content').toggleClass('hide');
   })
 
+  $('.bars').click(function(){
+    $('.navigation').toggleClass('toggle');
+  });
+  $('.navigation ul li').click(function(){
+    $(this).find('ul').toggleClass('d-block');
+  });
 });
