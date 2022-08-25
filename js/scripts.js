@@ -47,8 +47,8 @@ $(document).ready(function() {
 
   //Button hide
   $('.btn-toogle').click(function(){
-    $(this).parent().toggleClass('hide');
-    $(this).parent().parent().find('.content').toggleClass('hide');
+    $(this).parent().toggleClass('show');
+    $(this).parent().parent().find('.content').toggleClass('show');
   })
 
   $('.bars').click(function(){
@@ -57,4 +57,13 @@ $(document).ready(function() {
   $('.navigation ul li').click(function(){
     $(this).find('ul').toggleClass('d-block');
   });
+
+  //Close youtube
+  $('.modal-video').on('hidden.bs.modal', function (e) {
+    var $this = $(this).find('iframe'),
+            tempSrc = $this.attr('src');
+    $this.attr('src', "");
+    $this.attr('src', tempSrc);
+  });
+  
 });
